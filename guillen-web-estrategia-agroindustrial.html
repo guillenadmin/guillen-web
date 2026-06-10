@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GUILLÉN Estrategia Agroindustrial | Consultoría regulatoria para PYMEs agroalimentarias en Andalucía</title>
+  <meta name="description" content="Dirección técnica externa para PYMEs agroalimentarias andaluzas. Cumplimiento Ley 1/2025, plan de prevención del desperdicio alimentario y certificaciones de exportación.">
+  <meta property="og:title" content="GUILLÉN Estrategia Agroindustrial">
+  <meta property="og:description" content="Dirección técnica externa para PYMEs agroalimentarias andaluzas. Sin añadir nadie a tu plantilla.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://guillen-estrategia.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      color: #022135;
+      background: #FCF7F4;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== TOKENS ===== */
+    :root {
+      --crema: #FCF7F4;
+      --blanco: #FEFEFE;
+      --marino: #022135;
+      --marino-medio: #0F3857;
+      --azul: #355A7C;
+      --verde-acento: #6D9778;
+      --verde-cta: #8EAD79;
+      --radio: 6px;
+      --radio-lg: 12px;
+      --max: 1080px;
+      --gap: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 5vw, 3rem);
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--marino);
+      padding: 0 clamp(1.25rem, 5vw, 3rem);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo img {
+      height: 38px;
+      width: auto;
+    }
+    .nav-cta {
+      background: var(--verde-cta);
+      color: var(--marino);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 10px 22px;
+      border: none;
+      border-radius: var(--radio);
+      cursor: pointer;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* ===== HERO ===== */
+    #hero {
+      background: var(--marino);
+      padding-top: 64px;
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: clamp(3rem, 8vw, 5rem) clamp(1.25rem, 5vw, 3rem);
+      max-width: var(--max);
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-text { order: 1; }
+    .hero-image { order: 2; display: flex; justify-content: center; }
+    .hero-image img {
+      width: min(340px, 80vw);
+      border-radius: var(--radio-lg);
+      object-fit: cover;
+      object-position: top;
+    }
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--verde-acento);
+      margin-bottom: 1.25rem;
+    }
+    .hero-h1 {
+      font-size: clamp(2rem, 5.5vw, 3.2rem);
+      font-weight: 700;
+      color: #FEFEFE;
+      line-height: 1.18;
+      margin-bottom: 1.5rem;
+    }
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--verde-cta);
+    }
+    .hero-sub {
+      font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+      font-weight: 400;
+      color: rgba(254,254,254,0.75);
+      line-height: 1.65;
+      margin-bottom: 0.75rem;
+      max-width: 520px;
+    }
+    .hero-dato {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--verde-cta);
+      margin-bottom: 2rem;
+      letter-spacing: 0.02em;
+    }
+    .hero-legal {
+      font-size: 0.68rem;
+      font-weight: 300;
+      color: rgba(254,254,254,0.4);
+      margin-bottom: 2.25rem;
+      letter-spacing: 0.03em;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    .btn-primary {
+      background: var(--verde-cta);
+      color: var(--marino);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 14px 30px;
+      border: none;
+      border-radius: var(--radio);
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .hero-link-secondary {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: rgba(254,254,254,0.55);
+      text-decoration: underline;
+      text-decoration-color: rgba(254,254,254,0.2);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .hero-link-secondary:hover { color: var(--verde-cta); }
+
+    /* ===== SECCIÓN DOLOR ===== */
+    #dolor {
+      background: var(--crema);
+      padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 3rem);
+    }
+    .sec-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--verde-acento);
+      margin-bottom: 0.75rem;
+    }
+    .sec-title {
+      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+      font-weight: 700;
+      color: var(--marino-medio);
+      line-height: 1.25;
+      margin-bottom: 0.85rem;
+      max-width: 640px;
+    }
+    .sec-sub {
+      font-size: 0.95rem;
+      color: rgba(2,33,53,0.6);
+      max-width: 560px;
+      margin-bottom: 3rem;
+      line-height: 1.65;
+    }
+    .dolor-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    .dolor-card {
+      background: var(--blanco);
+      border-radius: var(--radio-lg);
+      padding: 1.75rem 2rem;
+      border-left: 3px solid var(--verde-acento);
+      transition: transform 0.2s;
+    }
+    .dolor-card:hover { transform: translateX(4px); }
+    .dolor-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(109,151,120,0.12);
+      border-radius: var(--radio);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--verde-acento);
+      font-size: 1rem;
+    }
+    .dolor-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--marino);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+    .dolor-card p {
+      font-size: 0.88rem;
+      color: rgba(2,33,53,0.65);
+      line-height: 1.65;
+    }
+
+    /* ===== SERVICIOS ===== */
+    #servicios {
+      background: var(--blanco);
+      padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 3rem);
+    }
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .servicio-card {
+      background: var(--crema);
+      border-radius: var(--radio-lg);
+      padding: 2rem 2rem 1.75rem;
+      border: 1px solid rgba(2,33,53,0.07);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .servicio-card:hover {
+      box-shadow: 0 8px 32px rgba(2,33,53,0.07);
+      transform: translateY(-2px);
+    }
+    .servicio-letra {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--marino);
+      color: #FEFEFE;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: var(--radio);
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.04em;
+    }
+    .servicio-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--marino);
+      margin-bottom: 0.35rem;
+    }
+    .servicio-card .servicio-desc {
+      font-size: 0.88rem;
+      color: rgba(2,33,53,0.7);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+    .servicio-card .servicio-perfil {
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      color: var(--verde-acento);
+      font-style: italic;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(2,33,53,0.07);
+    }
+
+    /* ===== DIFERENCIAL ===== */
+    #diferencial {
+      background: var(--crema);
+      padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 3rem);
+    }
+    .diferencial-inner {
+      max-width: 640px;
+    }
+    .diferencial-body {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .diferencial-body p {
+      font-size: 0.95rem;
+      color: rgba(2,33,53,0.75);
+      line-height: 1.7;
+    }
+    .diferencial-body p strong {
+      color: var(--marino);
+      font-weight: 500;
+    }
+
+    /* ===== SOBRE ALFREDO ===== */
+    #sobre {
+      background: var(--marino);
+      padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 3rem);
+    }
+    .sobre-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .sobre-foto-wrap { display: flex; justify-content: center; }
+    .sobre-foto {
+      width: min(240px, 65vw);
+      height: min(240px, 65vw);
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      border: 3px solid var(--verde-acento);
+    }
+    .sobre-texto .sec-eyebrow { color: var(--verde-acento); }
+    .sobre-texto .sec-title { color: #FEFEFE; }
+    .sobre-parrafo {
+      font-size: 0.92rem;
+      color: rgba(254,254,254,0.72);
+      line-height: 1.75;
+      margin-bottom: 0.85rem;
+    }
+    .sobre-parrafo:last-of-type { margin-bottom: 2rem; }
+    .sobre-parrafo strong { color: #FEFEFE; font-weight: 500; }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(254,254,254,0.6);
+      background: rgba(254,254,254,0.08);
+      border: 1px solid rgba(254,254,254,0.12);
+      padding: 5px 12px;
+      border-radius: 99px;
+    }
+
+    /* ===== CUESTIONARIO ===== */
+    #cuestionario {
+      background: var(--blanco);
+      padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 3rem);
+    }
+    .quiz-wrap {
+      max-width: 640px;
+      margin: 2.5rem auto 0;
+    }
+    .quiz-progress-bar {
+      height: 3px;
+      background: rgba(2,33,53,0.08);
+      border-radius: 99px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .quiz-progress-fill {
+      height: 100%;
+      background: var(--verde-cta);
+      border-radius: 99px;
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+    .quiz-intro {
+      background: rgba(2,33,53,0.04);
+      border-radius: var(--radio-lg);
+      padding: 1rem 1.25rem;
+      font-size: 0.82rem;
+      color: rgba(2,33,53,0.55);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; }
+    .quiz-meta {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--verde-acento);
+      margin-bottom: 0.6rem;
+    }
+    .quiz-q {
+      font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+      font-weight: 700;
+      color: var(--marino);
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+    .quiz-hint {
+      font-size: 0.82rem;
+      color: rgba(2,33,53,0.5);
+      margin-bottom: 1.5rem;
+      line-height: 1.55;
+    }
+    .quiz-options { display: flex; flex-direction: column; gap: 0.6rem; }
+    .quiz-opt {
+      background: var(--crema);
+      border: 1px solid rgba(2,33,53,0.1);
+      border-radius: var(--radio-lg);
+      padding: 13px 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      color: var(--marino);
+      cursor: pointer;
+      text-align: left;
+      line-height: 1.45;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .quiz-opt:hover { border-color: var(--verde-cta); background: #F0F7EC; }
+    .quiz-opt.selected { border: 1.5px solid var(--verde-cta); background: #F0F7EC; }
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .btn-back-quiz {
+      background: none;
+      border: 1px solid rgba(2,33,53,0.15);
+      border-radius: var(--radio);
+      padding: 9px 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(2,33,53,0.5);
+      cursor: pointer;
+    }
+    .btn-next-quiz {
+      background: var(--marino);
+      border: none;
+      border-radius: var(--radio);
+      padding: 10px 22px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #FEFEFE;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      opacity: 0.35;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .btn-next-quiz.ready { opacity: 1; pointer-events: all; }
+
+    /* Resultado del cuestionario */
+    .quiz-result { display: none; }
+    .quiz-result.active { display: block; }
+    .result-title {
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      font-weight: 700;
+      color: var(--marino);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .result-sub {
+      font-size: 0.9rem;
+      color: rgba(2,33,53,0.6);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .result-bar-wrap { margin: 1rem 0 1.5rem; }
+    .result-bar-bg {
+      height: 7px;
+      background: rgba(2,33,53,0.08);
+      border-radius: 99px;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+    }
+    .result-bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width 1s ease;
+    }
+    .result-bar-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: rgba(2,33,53,0.4);
+    }
+    .result-comparativa {
+      background: var(--crema);
+      border-radius: var(--radio-lg);
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+      border: 1px solid rgba(2,33,53,0.07);
+    }
+    .result-comp-title {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(2,33,53,0.4);
+      margin-bottom: 1rem;
+    }
+    .result-comp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .result-comp-item {
+      border-radius: var(--radio);
+      padding: 0.85rem 1rem;
+    }
+    .result-comp-item .comp-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+    .result-comp-item .comp-num {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .result-comp-item .comp-note {
+      font-size: 0.7rem;
+      line-height: 1.4;
+    }
+    .result-causa {
+      background: var(--crema);
+      border-left: 3px solid var(--verde-acento);
+      border-radius: 0 var(--radio) var(--radio) 0;
+      padding: 0.85rem 1.1rem;
+      font-size: 0.82rem;
+      color: rgba(2,33,53,0.6);
+      line-height: 1.6;
+      font-style: italic;
+      margin: 1rem 0;
+    }
+    .result-brechas { margin: 1.25rem 0; }
+    .result-brechas-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(2,33,53,0.4);
+      margin-bottom: 0.75rem;
+    }
+    .brecha-item {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+      border-top: 1px solid rgba(2,33,53,0.07);
+      font-size: 0.85rem;
+      color: var(--marino);
+      line-height: 1.55;
+      align-items: flex-start;
+    }
+    .brecha-icon { flex-shrink: 0; margin-top: 2px; color: var(--verde-acento); }
+    .result-context {
+      font-size: 0.8rem;
+      color: rgba(2,33,53,0.55);
+      background: rgba(2,33,53,0.04);
+      border-radius: var(--radio);
+      padding: 0.75rem 1rem;
+      margin: 0.5rem 0;
+      line-height: 1.55;
+    }
+    .result-ctas { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .btn-result-main {
+      display: block;
+      width: 100%;
+      background: var(--verde-cta);
+      border: none;
+      border-radius: var(--radio-lg);
+      padding: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--marino);
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      text-align: center;
+      transition: opacity 0.2s;
+    }
+    .btn-result-main:hover { opacity: 0.88; }
+    .btn-result-sec {
+      display: block;
+      width: 100%;
+      background: var(--crema);
+      border: 1px solid rgba(2,33,53,0.12);
+      border-radius: var(--radio-lg);
+      padding: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(2,33,53,0.6);
+      cursor: pointer;
+      text-align: center;
+    }
+    .quiz-restart {
+      display: block;
+      font-size: 0.72rem;
+      color: rgba(2,33,53,0.35);
+      text-align: center;
+      margin-top: 1rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* ===== CONTACTO ===== */
+    #contacto {
+      background: var(--crema);
+      padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 3rem);
+    }
+    .contacto-inner {
+      max-width: 560px;
+    }
+    .contacto-form {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(2,33,53,0.5);
+    }
+    .form-input, .form-select, .form-textarea {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      color: var(--marino);
+      background: var(--blanco);
+      border: 1px solid rgba(2,33,53,0.12);
+      border-radius: var(--radio);
+      padding: 11px 14px;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--verde-acento);
+    }
+    .form-textarea { resize: vertical; min-height: 100px; line-height: 1.55; }
+    .form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23355A7C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+    .btn-submit {
+      background: var(--verde-cta);
+      color: var(--marino);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 14px 30px;
+      border: none;
+      border-radius: var(--radio);
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      align-self: flex-start;
+    }
+    .btn-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+    .form-trust {
+      font-size: 0.75rem;
+      color: rgba(2,33,53,0.4);
+      margin-top: 0.25rem;
+      line-height: 1.5;
+    }
+    .form-confirm {
+      display: none;
+      background: #EAF3DE;
+      border-radius: var(--radio-lg);
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #27500A;
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+    .form-confirm.visible { display: block; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--marino);
+      padding: 2.5rem clamp(1.25rem, 5vw, 3rem);
+    }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .footer-logo img { height: 32px; width: auto; opacity: 0.85; }
+    .footer-info {
+      font-size: 0.75rem;
+      color: rgba(254,254,254,0.35);
+      line-height: 1.65;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.75rem;
+      color: rgba(254,254,254,0.4);
+    }
+    .footer-links a:hover { color: var(--verde-cta); }
+
+    /* ===== RESPONSIVE — TABLET ===== */
+    @media (min-width: 640px) {
+      .dolor-grid { grid-template-columns: 1fr 1fr; }
+      .servicios-grid { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr 1fr; }
+      .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; }
+    }
+
+    /* ===== RESPONSIVE — DESKTOP ===== */
+    @media (min-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr 420px;
+        align-items: center;
+        gap: 4rem;
+      }
+      .hero-text { order: 1; }
+      .hero-image { order: 2; justify-content: flex-end; }
+      .hero-image img { width: 100%; max-width: 380px; }
+      .dolor-grid { grid-template-columns: repeat(3, 1fr); }
+      .servicios-grid { grid-template-columns: repeat(3, 1fr); }
+      .sobre-inner { grid-template-columns: 240px 1fr; align-items: start; }
+      .sobre-foto-wrap { justify-content: flex-start; }
+    }
+
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav role="banner">
+  <a href="#hero" class="nav-logo" aria-label="GUILLÉN Estrategia Agroindustrial — inicio">
+    <img src="assets/logo.png" alt="GUILLÉN Estrategia Agroindustrial">
+  </a>
+  <button class="nav-cta" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">
+    Hablemos de tu empresa
+  </button>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero" aria-labelledby="hero-title">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Consultoría agroalimentaria · Andalucía</p>
+      <h1 class="hero-h1" id="hero-title">
+        La Ley 1/2025<br>ya no es opcional.<br>
+        <em>Convertirla en margen,</em><br><em>tampoco.</em>
+      </h1>
+      <p class="hero-sub">Dirección técnica externa para PYMEs agroalimentarias andaluzas. Sin añadir nadie a tu plantilla.</p>
+      <p class="hero-dato">El 51,8% de las PYMEs del sector no tiene plan documentado · Fuente: MAPA, 2024</p>
+      <p class="hero-legal">Sanciones desde 2.001 € hasta 60.000 € por infracción grave. En vigor desde abril 2026.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">
+          Hablemos de tu empresa →
+        </button>
+        <a class="hero-link-secondary" onclick="document.getElementById('cuestionario').scrollIntoView({behavior:'smooth'})">
+          ¿No sabes por dónde empieza? Haz el diagnóstico gratuito
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/foto-hero.jpg" alt="Alfredo Guillén, consultor estrategia agroindustrial" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOLOR ===== -->
+<section id="dolor" aria-labelledby="dolor-title">
+  <div class="container">
+    <p class="sec-eyebrow">La situación habitual</p>
+    <h2 class="sec-title" id="dolor-title">Lo que suele pasar en empresas como la tuya</h2>
+    <div class="dolor-grid">
+      <div class="dolor-card">
+        <div class="dolor-icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Mermas sin cuantificar</h3>
+        <p>Sabes que tienes pérdidas. Pero no tienes ese número en euros — solo en kilos o porcentajes que nadie traduce a lo que importa.</p>
+      </div>
+      <div class="dolor-card">
+        <div class="dolor-icon" aria-hidden="true"><i class="fa-solid fa-file-signature"></i></div>
+        <h3>Plan documentado pendiente</h3>
+        <p>La Ley 1/2025 exige un plan documentado y firmado. No unas buenas prácticas — un documento registrado y actualizable.</p>
+      </div>
+      <div class="dolor-card">
+        <div class="dolor-icon" aria-hidden="true"><i class="fa-solid fa-users"></i></div>
+        <h3>Equipo ya al límite</h3>
+        <p>Tu equipo de calidad ya tiene suficiente encima. Añadirle esto sin metodología es lo más rápido para que acabe sin hacerse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICIOS ===== -->
+<section id="servicios" aria-labelledby="servicios-title">
+  <div class="container">
+    <p class="sec-eyebrow">Servicios</p>
+    <h2 class="sec-title" id="servicios-title">Tres formas de trabajar juntos</h2>
+    <div class="servicios-grid">
+      <article class="servicio-card">
+        <span class="servicio-letra" aria-label="Servicio A">A</span>
+        <h3>Diagnóstico estratégico</h3>
+        <p class="servicio-desc">Cuantificamos la pérdida económica real, identificamos brechas de cumplimiento y entregamos una hoja de ruta con prioridades claras.</p>
+        <p class="servicio-perfil">Para empresas que quieren entender el problema antes de resolver nada.</p>
+      </article>
+      <article class="servicio-card">
+        <span class="servicio-letra" aria-label="Servicio B">B</span>
+        <h3>Plan de prevención Ley 1/2025</h3>
+        <p class="servicio-desc">Construimos el plan que exige el artículo 6 — documentado, firmado, listo para una inspección. Con los acuerdos territoriales de donación incluidos.</p>
+        <p class="servicio-perfil">Para empresas que necesitan cumplir y cerrar ese tema de una vez.</p>
+      </article>
+      <article class="servicio-card">
+        <span class="servicio-letra" aria-label="Servicio C">C</span>
+        <h3>Certificaciones de exportación</h3>
+        <p class="servicio-desc">Kosher, Halal, Vegan V-Label, Orgánico. He gestionado estos procesos desde dentro de planta. Sé lo que piden, lo que falla y cómo acortarlo.</p>
+        <p class="servicio-perfil">Para empresas que quieren abrir mercados sin perderse en el proceso.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIFERENCIAL ===== -->
+<section id="diferencial" aria-labelledby="diferencial-title">
+  <div class="container">
+    <div class="diferencial-inner">
+      <p class="sec-eyebrow">Por qué GUILLÉN</p>
+      <h2 class="sec-title" id="diferencial-title">Lo que GUILLÉN no reemplaza</h2>
+      <div class="diferencial-body">
+        <p><strong>Tu equipo conoce la planta.</strong> Eso no se subcontrata.</p>
+        <p>Lo que sí: la metodología para documentar el plan, los acuerdos territoriales, el proceso de certificación.</p>
+        <p>He visto lo que pasa cuando esto cae sobre alguien que ya tiene la agenda llena. No es falta de competencia — es falta de tiempo y foco.</p>
+        <p>GUILLÉN resuelve ese problema concreto. Cuando está hecho, tu equipo tiene un sistema que puede mantener solo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE MÍ ===== -->
+<section id="sobre" aria-labelledby="sobre-title">
+  <div class="container">
+    <div class="sobre-inner">
+      <div class="sobre-foto-wrap">
+        <img src="assets/foto-headshot.jpg" alt="Alfredo Guillén Bazán — Ingeniero Agroindustrial" class="sobre-foto" loading="lazy">
+      </div>
+      <div class="sobre-texto">
+        <p class="sec-eyebrow">Sobre mí</p>
+        <h2 class="sec-title" id="sobre-title">Alfredo Guillén</h2>
+        <p class="sobre-parrafo">Ingeniero agroindustrial con <strong>siete años gestionando calidad y certificaciones internacionales</strong> desde dentro de planta.</p>
+        <p class="sobre-parrafo">He estado en las auditorías, en los rechazos de contenedor y en las reuniones donde se decide si un proveedor sigue o no.</p>
+        <p class="sobre-parrafo">Eso es lo que traigo.</p>
+        <div class="badges" role="list">
+          <span class="badge" role="listitem">7 años calidad internacional</span>
+          <span class="badge" role="listitem">Kosher</span>
+          <span class="badge" role="listitem">Halal</span>
+          <span class="badge" role="listitem">Orgánico</span>
+          <span class="badge" role="listitem">AGRITRADE S.R.L.</span>
+          <span class="badge" role="listitem">Banco de Alimentos Perú</span>
+          <span class="badge" role="listitem">Ing. Agroindustrial UNMSM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CUESTIONARIO ===== -->
+<section id="cuestionario" aria-labelledby="cuestionario-title">
+  <div class="container">
+    <p class="sec-eyebrow">Diagnóstico rápido</p>
+    <h2 class="sec-title" id="cuestionario-title">¿No sabes por dónde empieza tu empresa?</h2>
+    <p class="sec-sub">8 preguntas. Menos de 3 minutos. Resultado inmediato con las brechas concretas de tu empresa.</p>
+    <div class="quiz-wrap" role="form" aria-label="Cuestionario de diagnóstico Ley 1/2025">
+      <div class="quiz-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="quiz-progress-fill" id="qz-progress"></div>
+      </div>
+      <div class="quiz-intro">Este cuestionario evalúa la situación de tu empresa, no a las personas que la gestionan. El resultado es información — no un juicio.</div>
+
+      <!-- Paso 0: Filtro de perfil -->
+      <div class="quiz-step active" data-step="0">
+        <p class="quiz-meta">Antes de empezar</p>
+        <p class="quiz-q">¿Desde qué posición estás haciendo este cuestionario?</p>
+        <p class="quiz-hint">El resultado se adapta para que sea útil según tu rol.</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" data-val="gerente" data-score="0">Soy el gerente, dueño o CEO de la empresa</button>
+          <button class="quiz-opt" data-val="calidad" data-score="0">Soy del área de calidad, producción u operaciones</button>
+          <button class="quiz-opt" data-val="otro" data-score="0">Otro rol — quiero ver cómo está la empresa</button>
+        </div>
+        <div class="quiz-nav"><span></span><button class="btn-next-quiz" id="qz-next0">Siguiente →</button></div>
+      </div>
+
+      <!-- Paso 1 -->
+      <div class="quiz-step" data-step="1">
+        <p class="quiz-meta">Sobre tu empresa · 1 de 8</p>
+        <p class="quiz-q">¿Cuántos trabajadores tiene tu empresa?</p>
+        <p class="quiz-hint">La Ley 1/2025 excluye empresas con menos de 10 trabajadores.</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" data-val="excluido" data-score="0">Menos de 10 trabajadores</button>
+          <button class="quiz-opt" data-val="10-49" data-score="5">Entre 10 y 49 trabajadores</button>
+          <button class="quiz-opt" data-val="50-249" data-score="5">Entre 50 y 249 trabajadores</button>
+          <button class="quiz-opt" data-val="250+" data-score="5">250 o más trabajadores</button>
+        </div>
+        <div class="quiz-nav"><button class="btn-back-quiz" onclick="qzBack()">← Atrás</button><button class="btn-next-quiz" id="qz-next1">Siguiente →</button></div>
+      </div>
+
+      <!-- Paso 2 -->
+      <div class="quiz-step" data-step="2">
+        <p class="quiz-meta">Planificación · 2 de 8</p>
+        <p class="quiz-q">¿Tu empresa tiene un plan de prevención del desperdicio documentado y firmado?</p>
+        <p class="quiz-hint">El artículo 6 de la Ley 1/2025 lo exige por escrito — no basta con hacerlo informalmente.</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" data-val="si" data-score="25">Sí, está documentado y actualizado</button>
+          <button class="quiz-opt" data-val="parcial" data-score="10">Tenemos prácticas internas, pero no está formalizado</button>
+          <button class="quiz-opt" data-val="no" data-score="0">No tenemos nada documentado</button>
+          <button class="quiz-opt" data-val="ns" data-score="0">No lo sé con certeza</button>
+        </div>
+        <div class="quiz-nav"><button class="btn-back-quiz" onclick="qzBack()">← Atrás</button><button class="btn-next-quiz" id="qz-next2">Siguiente →</button></div>
+      </div>
+
+      <!-- Paso 3 -->
+      <div class="quiz-step" data-step="3">
+        <p class="quiz-meta">Cuantificación · 3 de 8</p>
+        <p class="quiz-q">¿Sabes cuánto dinero pierde tu empresa al año por producto que no llega a venderse?</p>
+        <p class="quiz-hint">No el peso en kilos — el valor en euros.</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" data-val="si" data-score="20">Sí, tenemos ese dato calculado y lo revisamos</button>
+          <button class="quiz-opt" data-val="aprox" data-score="8">Tenemos una estimación, pero no un cálculo formal</button>
+          <button class="quiz-opt" data-val="no" data-score="0">No hemos calculado ese impacto económico</button>
+        </div>
+        <div class="quiz-nav"><button class="btn-back-quiz" onclick="qzBack()">← Atrás</button><button class="btn-next-quiz" id="qz-next3">Siguiente →</button></div>
+      </div>
+
+      <!-- Paso 4 -->
+      <div class="quiz-step" data-step="4">
+        <p class="quiz-meta">Acuerdos · 4 de 8</p>
+        <p class="quiz-q">¿Tienes acuerdos formalizados con bancos de alimentos u ONGs en todas las provincias donde operas?</p>
+        <p class="quiz-hint">La ley exige convenios activos en cada territorio donde generas excedentes.</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" data-val="si" data-score="20">Sí, en todas las provincias donde operamos</button>
+          <button class="quiz-opt" data-val="parcial" data-score="8">En algunas provincias sí, en otras no</button>
+          <button class="quiz-opt" data-val="no" data-score="0">No tenemos acuerdos formalizados</button>
+          <button class="quiz-opt" data-val="ns" data-score="0">No sabía que era obligatorio por provincia</button>
+        </div>
+        <div class="quiz-nav"><button class="btn-back-quiz" onclick="qzBack()">← Atrás</button><button class="btn-next-quiz" id="qz-next4">Siguiente →</button></div>
+      </div>
+
+      <!-- Paso 5 -->
+      <div class="quiz-step" data-step="5">
+        <p class="quiz-meta">Causa · 5 de 8</p>
+        <p class="quiz-q">¿Cuál es la principal causa por la que producto tuyo no llega a venderse?</p>
+        <p class="quiz-hint">Cada causa tiene una solución distinta.</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" data-val="calidad" data-score="5">Producto rechazado por defectos visuales o de calidad</button>
+          <button class="quiz-opt" data-val="caducidad" data-score="5">Fechas de caducidad o consumo preferente ajustadas</button>
+          <button class="quiz-opt" data-val="produccion" data-score="5">Mermas en el proceso productivo</button>
+          <button class="quiz-opt" data-val="demanda" data-score="5">Dificultad para ajustar producción a la demanda</button>
+          <button class="quiz-opt" data-val="ns" data-score="2">No tenemos identificada la causa principal</button>
+        </div>
+        <div class="quiz-nav"><button class="btn-back-quiz" onclick="qzBack()">← Atrás</button><button class="btn-next-quiz" id="qz-next5">Siguiente →</button></div>
+      </div>
+
+      <!-- Paso 6 -->
+      <div class="quiz-step" data-step="6">
+        <p class="quiz-meta">Distribución · 6 de 8</p>
+        <p class="quiz-q">¿Tu empresa trabaja con grandes cadenas de distribución o centrales de compra?</p>
+        <p class="quiz-hint">Las grandes cadenas ya están exigiendo planes de gestión del desperdicio a sus proveedores.</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" data-val="si" data-score="5">Sí, suministramos a cadenas o distribuidores</button>
+          <button class="quiz-opt" data-val="no" data-score="5">No, vendemos directamente o a mercados locales</button>
+          <button class="quiz-opt" data-val="mixto" data-score="5">Tenemos ambos canales</button>
+        </div>
+        <div class="quiz-nav"><button class="btn-back-quiz" onclick="qzBack()">← Atrás</button><button class="btn-next-quiz" id="qz-next6">Siguiente →</button></div>
+      </div>
+
+      <!-- Paso 7 -->
+      <div class="quiz-step" data-step="7">
+        <p class="quiz-meta">Exportación · 7 de 8</p>
+        <p class="quiz-q">¿Tu empresa exporta o tiene interés en abrir mercados internacionales en los próximos dos años?</p>
+        <p class="quiz-hint">Mercados como Oriente Medio o América del Norte exigen certificaciones específicas.</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" data-val="si" data-score="5">Sí, ya exportamos y queremos crecer</button>
+          <button class="quiz-opt" data-val="interes" data-score="5">No exportamos aún, pero es un objetivo próximo</button>
+          <button class="quiz-opt" data-val="no" data-score="5">Nuestro mercado es nacional o local</button>
+        </div>
+        <div class="quiz-nav"><button class="btn-back-quiz" onclick="qzBack()">← Atrás</button><button class="btn-next-quiz" id="qz-next7">Siguiente →</button></div>
+      </div>
+
+      <!-- Paso 8 -->
+      <div class="quiz-step" data-step="8">
+        <p class="quiz-meta">Situación actual · 8 de 8</p>
+        <p class="quiz-q">Siendo honesto, ¿cómo describirías la situación de tu empresa frente a la Ley 1/2025?</p>
+        <p class="quiz-hint">No hay respuesta correcta. Este es el punto de partida.</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" data-val="ok" data-score="10">Estamos preparados — plan documentado y acuerdos en marcha</button>
+          <button class="quiz-opt" data-val="proceso" data-score="5">Estamos en ello, pero nos faltan cosas por cerrar</button>
+          <button class="quiz-opt" data-val="inicio" data-score="2">Sabemos que hay que hacer algo, pero no hemos empezado</button>
+          <button class="quiz-opt" data-val="perdido" data-score="0">Honestamente, no sabemos por dónde empezar</button>
+        </div>
+        <div class="quiz-nav"><button class="btn-back-quiz" onclick="qzBack()">← Atrás</button><button class="btn-next-quiz ready" id="qz-next8" onclick="qzShowResult()">Ver mi resultado →</button></div>
+      </div>
+
+      <!-- Resultado -->
+      <div class="quiz-result" id="qz-result" role="region" aria-label="Resultado del diagnóstico" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section id="contacto" aria-labelledby="contacto-title">
+  <div class="container">
+    <div class="contacto-inner">
+      <p class="sec-eyebrow">Contacto</p>
+      <h2 class="sec-title" id="contacto-title">Cuéntame tu situación.<br>Te digo si puedo ayudarte.</h2>
+      <p class="sec-sub">Sin compromiso. Sin propuesta automática.</p>
+      <form class="contacto-form" id="contacto-form" action="https://formspree.io/f/TUCODIGO" method="POST" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="nombre">Nombre</label>
+            <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="empresa">Empresa</label>
+            <input class="form-input" type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="provincia">Provincia</label>
+            <select class="form-select" id="provincia" name="provincia" required>
+              <option value="" disabled selected>Selecciona provincia</option>
+              <option>Almería</option>
+              <option>Cádiz</option>
+              <option>Córdoba</option>
+              <option>Granada</option>
+              <option>Huelva</option>
+              <option>Jaén</option>
+              <option>Málaga</option>
+              <option>Sevilla</option>
+              <option>Otra</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="sector">Sector</label>
+            <select class="form-select" id="sector" name="sector">
+              <option value="" disabled selected>Tipo de empresa</option>
+              <option>Conservas vegetales</option>
+              <option>Lácteos</option>
+              <option>Aceite de oliva</option>
+              <option>Cárnico</option>
+              <option>Panadería y bollería</option>
+              <option>Bebidas</option>
+              <option>Otro</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="mensaje">¿Qué está pasando en tu empresa?</label>
+          <textarea class="form-textarea" id="mensaje" name="mensaje" placeholder="Cuéntame brevemente tu situación..." required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Nuevo contacto desde guillen-estrategia.com">
+        <button type="submit" class="btn-submit">Enviar →</button>
+        <p class="form-trust">Recibido. Te respondo en menos de 48 horas.</p>
+      </form>
+      <div class="form-confirm" id="form-confirm" role="alert">
+        Recibido. Te respondo en menos de 48 horas con una valoración de si puedo ayudarte y cómo.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="assets/logo.png" alt="GUILLÉN Estrategia Agroindustrial">
+    </div>
+    <p class="footer-info">
+      GUILLÉN Estrategia Agroindustrial · Cádiz, Andalucía<br>
+      © 2026 Alfredo Guillén Bazán
+    </p>
+    <nav class="footer-links" aria-label="Enlaces legales">
+      <a href="https://linkedin.com/in/alfredoguillen" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="privacidad.html">Privacidad</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// ===== CUESTIONARIO =====
+(function() {
+  const steps = document.querySelectorAll('.quiz-step');
+  const progressBar = document.getElementById('qz-progress');
+  let current = 0;
+  const answers = {};
+
+  const causaNotes = {
+    calidad: 'El rechazo por calidad concentra el desperdicio de mayor valor unitario — el producto ya cargó todo el coste de producción. Reducirlo un 20% impacta directamente en el margen.',
+    caducidad: 'Las pérdidas por fechas ajustadas son recuperables con planificación de inventario más precisa y acuerdos de donación activados a tiempo.',
+    produccion: 'Las mermas en producción son las más fáciles de cuantificar y reducir con un plan documentado. También las más visibles ante una inspección.',
+    demanda: 'El desajuste entre producción y demanda abre oportunidades reales: donación programada, redistribución y subproductos con valor comercial.',
+    ns: 'No tener identificada la causa principal es en sí misma una brecha. Sin ese dato, cualquier medida es un disparo a ciegas. El diagnóstico empieza exactamente ahí.'
+  };
+
+  function updateProgress() {
+    const pct = Math.round((current / 9) * 100);
+    progressBar.style.width = pct + '%';
+    progressBar.closest('[role="progressbar"]').setAttribute('aria-valuenow', pct);
+  }
+
+  steps.forEach(function(step, i) {
+    const opts = step.querySelectorAll('.quiz-opt');
+    const nextBtn = step.querySelector('.btn-next-quiz');
+    opts.forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        opts.forEach(function(o) { o.classList.remove('selected'); });
+        opt.classList.add('selected');
+        answers[i] = { val: opt.dataset.val, score: parseInt(opt.dataset.score || 0) };
+        if (nextBtn && i < 8) nextBtn.classList.add('ready');
+      });
+    });
+    if (nextBtn && i < 8) {
+      nextBtn.addEventListener('click', function() {
+        if (!answers[i]) return;
+        step.classList.remove('active');
+        current = i + 1;
+        steps[current].classList.add('active');
+        updateProgress();
+      });
+    }
+  });
+
+  window.qzBack = function() {
+    if (current <= 0) return;
+    steps[current].classList.remove('active');
+    current--;
+    steps[current].classList.add('active');
+    updateProgress();
+  };
+
+  window.qzShowResult = function() {
+    if (!answers[8]) return;
+    steps[8].classList.remove('active');
+    progressBar.style.width = '100%';
+
+    let totalScore = 0;
+    for (var k in answers) totalScore += answers[k].score;
+    const pct = Math.min(Math.round((totalScore / 100) * 100), 100);
+
+    const perfil = answers[0] ? answers[0].val : 'gerente';
+    const excluido = answers[1] && answers[1].val === 'excluido';
+    const sinPlan = answers[2] && (answers[2].val === 'no' || answers[2].val === 'ns');
+    const sinCuantificacion = answers[3] && answers[3].val === 'no';
+    const sinAcuerdos = answers[4] && (answers[4].val === 'no' || answers[4].val === 'ns');
+    const causaVal = answers[5] ? answers[5].val : 'ns';
+    const distribuidores = answers[6] && (answers[6].val === 'si' || answers[6].val === 'mixto');
+    const exporta = answers[7] && (answers[7].val === 'si' || answers[7].val === 'interes');
+
+    const resultEl = document.getElementById('qz-result');
+
+    if (excluido) {
+      resultEl.innerHTML = '<h3 class="result-title">Tu empresa está excluida del ámbito directo de la ley</h3>' +
+        '<p class="result-sub">Con menos de 10 trabajadores, la Ley 1/2025 no te aplica directamente. Aun así, si trabajas con distribuidores, pueden exigirte evidencia de gestión del desperdicio como requisito de proveedor.</p>' +
+        '<div class="result-ctas"><button class="btn-result-main" onclick="document.getElementById(\'contacto\').scrollIntoView({behavior:\'smooth\'})">Hablemos de tu situación →</button></div>' +
+        '<span class="quiz-restart" onclick="qzRestart()">Volver a empezar</span>';
+      resultEl.classList.add('active');
+      return;
+    }
+
+    var title, sub, barColor;
+    if (pct <= 35) {
+      title = 'Tu empresa tiene un riesgo regulatorio alto';
+      sub = 'Hay brechas concretas que, en una inspección, pueden derivar en sanciones graves. Lo importante es que tienen solución ordenada.';
+      barColor = '#C94040';
+    } else if (pct <= 65) {
+      title = 'Vas por buen camino, pero quedan brechas por cerrar';
+      sub = 'Tu empresa ha tomado medidas, pero hay puntos sin formalizar que siguen generando exposición legal.';
+      barColor = '#BA7517';
+    } else {
+      title = 'Buen punto de partida — revisemos si hay margen de mejora';
+      sub = 'Tu empresa está mejor posicionada que el 51,8% de las PYMEs del sector. Siempre hay margen de mejora económica y exportadora.';
+      barColor = '#6D9778';
+    }
+
+    var sancionHTML = (sinPlan || sinAcuerdos)
+      ? '<div style="background:#FCEBEB;border:1px solid #F0A0A0;border-radius:8px;padding:10px 14px;margin:12px 0;font-size:0.8rem;color:#8B0000;line-height:1.5;">Sin plan documentado ni acuerdos territoriales: exposición a sanciones de hasta <strong>60.000 €</strong> por infracción grave (art. 21 Ley 1/2025).</div>'
+      : '';
+
+    var bloqueEconomico = '';
+    if (perfil === 'calidad') {
+      bloqueEconomico = '<div class="result-comparativa"><p class="result-comp-title">Lo que esto significa para tu equipo</p>' +
+        '<p style="font-size:0.85rem;color:rgba(2,33,53,0.65);line-height:1.65;margin:0;">La Ley 1/2025 requiere dedicación específica que pocas empresas pueden dar con los recursos actuales. No es un problema de competencia — es un problema de carga de trabajo.<br><br>GUILLÉN trabaja con el equipo interno, no en lugar de él. Cuando está hecho, tu equipo tiene un sistema que puede mantener solo.</p></div>';
+    } else {
+      bloqueEconomico = '<div class="result-comparativa"><p class="result-comp-title">Lo que cuesta resolver esto</p>' +
+        '<div class="result-comp-grid">' +
+        '<div class="result-comp-item" style="background:#FCEBEB;"><p class="comp-label" style="color:#8B0000;">Director de Calidad en plantilla</p><p class="comp-num" style="color:#8B0000;">47.000 – 50.000 €</p><p class="comp-note" style="color:#8B0000;">Al año. Coste fijo. Proceso de selección.</p></div>' +
+        '<div class="result-comp-item" style="background:#EAF3DE;"><p class="comp-label" style="color:#27500A;">GUILLÉN — por proyecto</p><p class="comp-num" style="color:#27500A;">Sin coste fijo</p><p class="comp-note" style="color:#27500A;">Solo cuando lo necesitas. Sin añadir nadie.</p></div>' +
+        '</div></div>';
+    }
+
+    var brechas = [];
+    if (sinPlan) brechas.push('<i class="fa-solid fa-triangle-exclamation brecha-icon" aria-hidden="true"></i><span>Sin plan de prevención documentado — infracción grave art. 6 Ley 1/2025. Sanción: hasta 60.000 €.</span>');
+    if (sinCuantificacion) brechas.push('<i class="fa-solid fa-coins brecha-icon" aria-hidden="true"></i><span>Sin cuantificación económica del desperdicio — no puedes mejorar lo que no mides. El 40,8% de las PYMEs tiene este punto pendiente.</span>');
+    if (sinAcuerdos) brechas.push('<i class="fa-solid fa-handshake brecha-icon" aria-hidden="true"></i><span>Sin acuerdos de donación territoriales — obligatorio en cada provincia donde operas (art. 6).</span>');
+    if (brechas.length === 0) brechas.push('<i class="fa-solid fa-circle-check brecha-icon" aria-hidden="true"></i><span>No detectamos brechas críticas. Podemos revisar juntos si hay margen de mejora económica o exportadora.</span>');
+
+    var brechasHTML = '<div class="result-brechas"><p class="result-brechas-title">Brechas identificadas</p>' +
+      brechas.map(function(b) { return '<div class="brecha-item">' + b + '</div>'; }).join('') + '</div>';
+
+    var contextHTML = '';
+    if (distribuidores) contextHTML += '<p class="result-context">Trabajas con distribuidores. Algunas cadenas ya exigen a sus proveedores un plan de gestión del desperdicio documentado.</p>';
+    if (exporta) contextHTML += '<p class="result-context">Tienes interés en exportar. Mercados de Oriente Medio y América del Norte exigen certificaciones específicas (Halal, Kosher, Orgánico) que abren o cierran puertas.</p>';
+
+    var ctaMainText = (perfil === 'calidad')
+      ? '¿Quieres los argumentos para presentarlo a dirección?'
+      : (pct <= 35 ? 'Hablemos de tu empresa esta semana →' : 'Hablemos de tu empresa →');
+
+    resultEl.innerHTML =
+      '<h3 class="result-title">' + title + '</h3>' +
+      '<p class="result-sub">' + sub + '</p>' +
+      sancionHTML +
+      '<div class="result-bar-wrap"><div class="result-bar-bg"><div class="result-bar-fill" style="width:' + pct + '%;background:' + barColor + '"></div></div>' +
+      '<div class="result-bar-labels"><span>Riesgo alto</span><span>' + pct + '% de cumplimiento</span><span>Bien encaminado</span></div></div>' +
+      bloqueEconomico +
+      '<div class="result-causa">' + (causaNotes[causaVal] || causaNotes['ns']) + '</div>' +
+      brechasHTML +
+      contextHTML +
+      '<div class="result-ctas">' +
+      '<button class="btn-result-main" onclick="document.getElementById(\'contacto\').scrollIntoView({behavior:\'smooth\'})">' + ctaMainText + '</button>' +
+      '<button class="btn-result-sec" onclick="document.getElementById(\'contacto\').scrollIntoView({behavior:\'smooth\'})">Descargar checklist Ley 1/2025 para PYMEs andaluzas</button>' +
+      '</div>' +
+      '<span class="quiz-restart" onclick="qzRestart()">Volver a empezar</span>';
+
+    resultEl.classList.add('active');
+    resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  window.qzRestart = function() {
+    steps.forEach(function(s) { s.classList.remove('active'); });
+    document.getElementById('qz-result').classList.remove('active');
+    document.getElementById('qz-result').innerHTML = '';
+    current = 0;
+    for (var k in answers) delete answers[k];
+    steps[0].classList.add('active');
+    document.querySelectorAll('.quiz-opt').forEach(function(o) { o.classList.remove('selected'); });
+    document.querySelectorAll('.btn-next-quiz:not(#qz-next8)').forEach(function(b) { b.classList.remove('ready'); });
+    progressBar.style.width = '0%';
+  };
+})();
+
+// ===== FORMULARIO =====
+document.getElementById('contacto-form').addEventListener('submit', function(e) {
+  // Si Formspree está configurado, dejar que el form funcione normalmente
+  // Si no, mostrar confirmación visual
+  var formspreeAction = this.action;
+  if (formspreeAction.includes('TUCODIGO')) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('form-confirm').classList.add('visible');
+  }
+});
+</script>
+
+</body>
+</html>
