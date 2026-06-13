@@ -13,6 +13,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init({ publicKey: "FUN_Vp0y9h1YDV7l2" });
+    })();
+  </script>
   <style>
     /* ===== RESET & BASE ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -765,7 +771,7 @@
 
 <nav role="banner">
   <a href="#hero" class="nav-logo" aria-label="GUILLÉN Estrategia Agroindustrial — inicio">
-    <img src="assets/logo.svg" alt="GUILLÉN Estrategia Agroindustrial">
+    <img src="assets/logo.png" alt="GUILLÉN Estrategia Agroindustrial">
   </a>
   <button class="nav-cta" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">
     Hablemos de tu empresa
@@ -1093,7 +1099,7 @@
 <footer role="contentinfo">
   <div class="footer-inner">
     <div class="footer-logo">
-      <img src="assets/logo.svg" alt="GUILLÉN Estrategia Agroindustrial">
+      <img src="assets/logo.png" alt="GUILLÉN Estrategia Agroindustrial">
     </div>
     <p class="footer-info">
       GUILLÉN Estrategia Agroindustrial · Cádiz, Andalucía<br>
@@ -1264,10 +1270,7 @@
       '<p style="font-size:0.78rem;color:rgba(2,33,53,0.5);margin:0 0 12px;line-height:1.5;">Te lo enviamos a tu correo. Sin spam, sin compromiso.</p>' +
       
       // Formulario del test reestructurado verticalmente (Campos Nombre y Empresa añadidos)
-      '<form id="qz-lead-form" action="https://formspree.io/f/mykadonw" method="POST" style="display:flex; flex-direction:column; gap:10px;">' +
-      '<input type="hidden" name="_subject" value="Nuevo lead diagnóstico Ley 1/2025">' +
-      '<input type="hidden" name="porcentaje" value="' + pct + '% de cumplimiento">' +
-      '<input type="hidden" name="brechas" value="' + (sinPlan ? 'Sin plan documentado. ' : '') + (sinCuantificacion ? 'Sin cuantificación económica. ' : '') + (sinAcuerdos ? 'Sin acuerdos territoriales. ' : '') + '">' +
+      '<form id="qz-lead-form" style="display:flex; flex-direction:column; gap:10px;">' +
       '<input type="hidden" name="perfil" value="' + perfil + '">' +
       '<input type="text" name="nombre" placeholder="Tu nombre" required style="font-family:Montserrat,sans-serif;font-size:0.85rem;color:#022135;background:#FEFEFE;border:1px solid rgba(2,33,53,0.12);border-radius:6px;padding:10px 14px;outline:none;">' +
       '<input type="text" name="empresa" placeholder="Nombre de tu empresa" required style="font-family:Montserrat,sans-serif;font-size:0.85rem;color:#022135;background:#FEFEFE;border:1px solid rgba(2,33,53,0.12);border-radius:6px;padding:10px 14px;outline:none;">' +
@@ -1291,22 +1294,36 @@
     resultEl.classList.add('active');
     resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // Mini formulario del cuestionario
+    // Mini formulario del cuestionario — envío vía EmailJS
     setTimeout(function() {
       var leadForm = document.getElementById('qz-lead-form');
       if (leadForm) {
         leadForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          fetch('https://formspree.io/f/mykadonw', {
-            method: 'POST',
-            body: new FormData(leadForm),
-            headers: { 'Accept': 'application/json' }
-          }).then(function(r) {
-            if (r.ok) {
+          var submitBtn = leadForm.querySelector('button[type="submit"]');
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Enviando...';
+
+          var templateParams = {
+            nombre: leadForm.querySelector('[name="nombre"]').value,
+            empresa: leadForm.querySelector('[name="empresa"]').value,
+            email: leadForm.querySelector('[name="email"]').value,
+            porcentaje: pct + '% de cumplimiento',
+            brechas: (sinPlan ? 'Sin plan documentado. ' : '') + (sinCuantificacion ? 'Sin cuantificación económica. ' : '') + (sinAcuerdos ? 'Sin acuerdos territoriales. ' : '') || 'Sin brechas críticas detectadas.',
+            perfil: perfil
+          };
+
+          emailjs.send('service_fdthc34', 'template_vlw1wfq', templateParams)
+            .then(function() {
               leadForm.style.display = 'none';
               document.getElementById('qz-lead-confirm').style.display = 'block';
-            }
-          });
+            })
+            .catch(function(err) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Enviar resultado →';
+              alert('No se pudo enviar. Intenta de nuevo o escríbenos directamente a alfredo@guillenestrategia.com');
+              console.error('EmailJS error:', err);
+            });
         });
       }
     }, 100);
