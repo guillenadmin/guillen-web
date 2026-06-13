@@ -1033,16 +1033,26 @@
       <h2 class="sec-title" id="contacto-title">Cuéntame tu situación.<br>Te digo si puedo ayudarte.</h2>
       <p class="sec-sub">Sin compromiso. Sin propuesta automática.</p>
       <form class="contacto-form" id="contacto-form" action="https://formspree.io/f/xojznrkn" method="POST" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="nombre">Nombre</label>
-            <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="empresa">Empresa</label>
-            <input class="form-input" type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa" required>
-          </div>
-        </div>
+<div class="form-row">
+  <div class="form-group">
+    <label class="form-label" for="nombre">Nombre</label>
+    <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="empresa">Empresa</label>
+    <input class="form-input" type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa" required>
+  </div>
+</div>
+<div class="form-row">
+  <div class="form-group">
+    <label class="form-label" for="email">Email</label>
+    <input class="form-input" type="email" id="email" name="email" placeholder="tu@empresa.com" required autocomplete="email">
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="telefono">Teléfono</label>
+    <input class="form-input" type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" required autocomplete="tel">
+  </div>
+</div>
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="provincia">Provincia</label>
@@ -1064,11 +1074,14 @@
             <select class="form-select" id="sector" name="sector">
               <option value="" disabled selected>Tipo de empresa</option>
               <option>Conservas vegetales</option>
+              <option>Frutas y hortalizas envasadas</option>
               <option>Lácteos</option>
               <option>Aceite de oliva</option>
-              <option>Cárnico</option>
+              <option>Cárnico y charcutería</option>
               <option>Panadería y bollería</option>
-              <option>Bebidas</option>
+              <option>Bebidas y zumos</option>
+              <option>Acuicultura y pesca</option>
+              <option>Frutos secos y especias</option>
               <option>Otro</option>
             </select>
           </div>
